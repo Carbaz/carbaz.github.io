@@ -369,7 +369,7 @@ button {
 }
 
 button:hover {
-    background-color: #1d4ed8;
+    background-color: var(--accent-color-hover);
     transform: scale(1.05);
 }
 
