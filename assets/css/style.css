@@ -613,23 +613,23 @@ section.visible {
 }
 
 .social-icon-github {
-    -webkit-mask: url('assets/img/github-icon.svg') no-repeat center / contain;
-    mask: url('assets/img/github-icon.svg') no-repeat center / contain;
+    -webkit-mask: url('/assets/img/github-icon.svg') no-repeat center / contain;
+    mask: url('/assets/img/github-icon.svg') no-repeat center / contain;
 }
 
 .social-icon-linkedin {
-    -webkit-mask: url('assets/img/linkedin-icon.svg') no-repeat center / contain;
-    mask: url('assets/img/linkedin-icon.svg') no-repeat center / contain;
+    -webkit-mask: url('/assets/img/linkedin-icon.svg') no-repeat center / contain;
+    mask: url('/assets/img/linkedin-icon.svg') no-repeat center / contain;
 }
 
 .social-icon-email {
-    -webkit-mask: url('assets/img/email-icon.svg') no-repeat center / contain;
-    mask: url('assets/img/email-icon.svg') no-repeat center / contain;
+    -webkit-mask: url('/assets/img/email-icon.svg') no-repeat center / contain;
+    mask: url('/assets/img/email-icon.svg') no-repeat center / contain;
 }
 
 .social-icon-huggingface {
-    -webkit-mask: url('assets/img/huggingface-icon.svg') no-repeat center / contain;
-    mask: url('assets/img/huggingface-icon.svg') no-repeat center / contain;
+    -webkit-mask: url('/assets/img/huggingface-icon.svg') no-repeat center / contain;
+    mask: url('/assets/img/huggingface-icon.svg') no-repeat center / contain;
 }
 
 .social-label-nowrap {
