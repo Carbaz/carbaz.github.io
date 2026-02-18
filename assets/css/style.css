@@ -222,6 +222,12 @@ section h2 {
     border: 1px solid var(--card-border);
     padding: 20px;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cert-item:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.12);
 }
 
 .cert-title {
@@ -358,7 +364,7 @@ footer {
     background: var(--card-bg-light); /* Light mode: Slightly darker blue-gray for the cards */
     border: 1px solid var(--card-border);
     border-radius: 10px;
-    box-shadow: 0 2px 4px var(--card-shadow);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
     padding: 20px;
     margin: 1rem 0;
     transition: background 0.3s ease, box-shadow 0.3s ease;
