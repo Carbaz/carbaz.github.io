@@ -2,44 +2,56 @@
    ROOT VARIABLES (LIGHT MODE)
 ============================ */
 :root {
-    --bg: #f7f7f7;
-    --text: #222;
-    --header-bg: #111;
+    --bg-gradient-start: #f3f4f6; /* Neutral light gray */
+    --bg-gradient-end: #e5e7eb; /* Slightly darker gray */
+    --text-color: #1f2937; /* Neutral dark gray */
+    --accent-color: #3b82f6; /* Softer blue */
+    --card-bg-light: #e0e7ff; /* Light mode: Slightly darker blue-gray for the cards */
+    --card-border: #d1d5db; /* Light gray border */
+    --card-shadow: rgba(0, 0, 0, 0.05);
+    --section-bg: #f3f4f6; /* Light gray for the section */
+
+    --header-bg-light: linear-gradient(135deg, #6a11cb, #2575fc); /* Restore original vibrant gradient */
+    --footer-bg-light: #3b82f6; /* Vibrant blue for light mode */
+
     --header-text: #fff;
     --section-alt-bg: #eee;
 
     --link: #0066cc;
     --link-hover: #004999;
 
-    --card-bg: #fff;
-    --card-border: #ddd;
+    --chatbot-bg-light: #f9fafb; /* Restore light gray for chatbot in light mode */
 }
 
 /* ============================
    DARK MODE
 ============================ */
 [data-theme="dark"] {
-    --bg: #111;
-    --text: #eee;
-    --header-bg: #000;
-    --header-text: #fff;
-    --section-alt-bg: #222;
+    --bg-gradient-start: #1e293b; /* Dark blue-gray */
+    --bg-gradient-end: #111827; /* Very dark gray */
+    --text-color: #e5e7eb; /* Light gray */
+    --accent-color: #60a5fa; /* Softer blue */
+    --card-bg-dark: #2c3e50; /* Dark mode: Darker gray-blue for the cards */
+    --card-border: #374151; /* Darker gray border */
+    --card-shadow: rgba(0, 0, 0, 0.2);
+    --section-bg: #1e293b; /* Dark blue-gray for the section */
 
-    --link: #66aaff;
-    --link-hover: #99c2ff;
+    --header-bg-dark: #000; /* Restore original dark mode header */
+    --footer-bg-dark: #1e293b; /* Darker blue-gray for footer in dark mode */
 
-    --card-bg: #1a1a1a;
-    --card-border: #333;
+    --chatbot-bg-dark: #0f1729; /* Proper dark gray for chatbot in dark mode */
 }
 
 /* ============================
-   GLOBAL STYLES
+   GENERAL STYLES
 ============================ */
 body {
+    font-family: 'Poppins', sans-serif;
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
+    padding: 0;
+    background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+    color: var(--text-color);
+    line-height: 1.6;
     transition: background 0.3s ease, color 0.3s ease;
 }
 
@@ -67,11 +79,31 @@ h1, h2, h3 {
    HEADER
 ============================ */
 header {
-    background: var(--header-bg);
-    color: var(--header-text);
-    padding: 40px 0;
     text-align: center;
-    transition: background 0.3s ease, color 0.3s ease;
+    padding: 2rem 1rem;
+    color: var(--text-color);
+    background: var(--header-bg-light);
+    box-shadow: 0 4px 6px var(--card-shadow);
+    border-bottom: 4px solid var(--bg-gradient-end);
+}
+
+header .top-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin: 0.5rem 0;
+    color: #fff;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin: 0;
+    color: #e0f2fe;
 }
 
 header nav a {
@@ -138,12 +170,23 @@ header nav a:hover {
    SECTIONS
 ============================ */
 .section {
-    padding: 60px 20px;
+    padding: 3rem 1rem;
+    margin: 2rem 0;
+    background: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px var(--card-shadow);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .section.alt {
     background: var(--section-alt-bg);
     transition: background 0.3s ease;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
 }
 
 /* ============================
@@ -175,7 +218,7 @@ header nav a:hover {
     grid-template-columns: 1fr 2fr;
     grid-template-rows: auto auto;
     gap: 15px 25px;
-    background: var(--card-bg);
+    background: var(--card-bg-light);
     border: 1px solid var(--card-border);
     padding: 20px;
     border-radius: 10px;
@@ -244,12 +287,83 @@ header nav a:hover {
 }
 
 /* ============================
+   BUTTONS
+============================ */
+button {
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+}
+
+/* ============================
    FOOTER
 ============================ */
 footer {
     text-align: center;
+    padding: 1.5rem;
+    background: var(--footer-bg-light);
+    color: #fff;
+    border-top: 4px solid var(--bg-gradient-start);
+}
+
+[data-theme="dark"] footer {
+    background: var(--footer-bg-dark);
+}
+
+/* ============================
+   CHATBOT BACKGROUND FIX
+============================ */
+.chatbot {
+    background: var(--chatbot-bg-light);
+    transition: background 0.3s ease;
+}
+
+[data-theme="dark"] .chatbot {
+    background: var(--chatbot-bg-dark);
+}
+
+/* ============================
+   CHATBOT BACKGROUND OVERRIDE
+============================ */
+#chatbot {
+    background: var(--chatbot-bg-light);
+}
+
+[data-theme="dark"] #chatbot {
+    background: var(--chatbot-bg-dark);
+}
+
+/* ============================
+   RESPONSIVE DESIGN
+============================ */
+@media (min-width: 768px) {
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+/* ============================
+   CERTIFICATES SECTION
+============================ */
+.cert-item {
+    background: var(--card-bg-light); /* Light mode: Slightly darker blue-gray for the cards */
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px var(--card-shadow);
     padding: 20px;
-    background: var(--header-bg);
-    color: var(--header-text);
-    transition: background 0.3s ease, color 0.3s ease;
+    margin: 1rem 0;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+[data-theme="dark"] .cert-item {
+    background: var(--card-bg-dark);
 }
