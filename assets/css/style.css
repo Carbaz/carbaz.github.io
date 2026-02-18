@@ -123,7 +123,7 @@ header .top-controls {
 header h1 {
     font-size: 3rem;
     margin: 0.5rem 0;
-    color: #fff;
+    color: var(--header-text);
 }
 
 header p {
