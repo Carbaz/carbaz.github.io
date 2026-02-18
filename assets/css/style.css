@@ -22,6 +22,12 @@
 
     --chatbot-bg-light: #f9fafb; /* Restore light gray for chatbot in light mode */
 
+    /* Compatibility aliases for code using old variable names */
+    --card-bg: var(--card-bg-light);
+    --text: var(--text-color);
+    --header-bg: var(--header-bg-light);
+    --accent-color-hover: #2563eb; /* Darker blue for hover */
+
     /* Fallbacks for older browsers */
     --bg-gradient-start-fallback: #f3f4f6;
     --bg-gradient-end-fallback: #e5e7eb;
@@ -45,6 +51,12 @@
     --footer-bg-dark: #1e293b; /* Darker blue-gray for footer in dark mode */
 
     --chatbot-bg-dark: #0f1729; /* Proper dark gray for chatbot in dark mode */
+
+    /* Compatibility aliases for code using old variable names */
+    --card-bg: var(--card-bg-dark);
+    --text: var(--text-color);
+    --header-bg: var(--header-bg-dark);
+    --accent-color-hover: #3b82f6; /* Brighter blue for hover in dark mode */
 
     /* Fallbacks for older browsers */
     --bg-gradient-start-fallback: #1e293b;
@@ -95,6 +107,10 @@ header {
     background: var(--header-bg-light);
     box-shadow: 0 4px 6px var(--card-shadow);
     border-bottom: 4px solid var(--bg-gradient-end);
+}
+
+[data-theme="dark"] header {
+    background: var(--header-bg-dark);
 }
 
 header .top-controls {
@@ -515,6 +531,21 @@ section.visible {
     transform: translateY(0);
 }
 
+/* Disable animations if user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    section {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* Fallback: make sections visible if JS doesn't load */
+.no-js section {
+    opacity: 1;
+    transform: none;
+}
+
 /* ============================
    SOCIAL LINKS
 ============================ */
@@ -571,4 +602,36 @@ section.visible {
 .social-links img {
     width: 24px;
     height: 24px;
+}
+
+.social-icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-color: currentColor;
+    margin-right: 0.4rem;
+}
+
+.social-icon-github {
+    -webkit-mask: url('assets/img/github-icon.svg') no-repeat center / contain;
+    mask: url('assets/img/github-icon.svg') no-repeat center / contain;
+}
+
+.social-icon-linkedin {
+    -webkit-mask: url('assets/img/linkedin-icon.svg') no-repeat center / contain;
+    mask: url('assets/img/linkedin-icon.svg') no-repeat center / contain;
+}
+
+.social-icon-email {
+    -webkit-mask: url('assets/img/email-icon.svg') no-repeat center / contain;
+    mask: url('assets/img/email-icon.svg') no-repeat center / contain;
+}
+
+.social-icon-huggingface {
+    -webkit-mask: url('assets/img/huggingface-icon.svg') no-repeat center / contain;
+    mask: url('assets/img/huggingface-icon.svg') no-repeat center / contain;
+}
+
+.social-label-nowrap {
+    white-space: nowrap;
 }

@@ -31,44 +31,52 @@ toggleBtn.addEventListener("click", () => {
 ----------------------------*/
 const sections = document.querySelectorAll("section");
 
-if ("IntersectionObserver" in window) {
-    const observerOptions = {
-        root: null,
-        rootMargin: "0px 0px -100px 0px",
-        threshold: 0
-    };
+// Check if user prefers reduced motion
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    const handleIntersection = (entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-                observer.unobserve(entry.target);
-            }
-        });
-    };
+if (!prefersReducedMotion) {
+    if ("IntersectionObserver" in window) {
+        const observerOptions = {
+            root: null,
+            rootMargin: "0px 0px -100px 0px",
+            threshold: 0
+        };
 
-    const observer = new IntersectionObserver(handleIntersection, observerOptions);
-    sections.forEach(section => observer.observe(section));
-} else {
-    // Fallback for browsers without IntersectionObserver support.
-    let ticking = false;
-
-    function handleScroll() {
-        if (ticking) {
-            return;
-        }
-        ticking = true;
-        window.requestAnimationFrame(() => {
-            sections.forEach(section => {
-                const rect = section.getBoundingClientRect();
-                if (rect.top < window.innerHeight - 100) {
-                    section.classList.add("visible");
+        const handleIntersection = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
                 }
             });
-            ticking = false;
-        });
-    }
+        };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
+        const observer = new IntersectionObserver(handleIntersection, observerOptions);
+        sections.forEach(section => observer.observe(section));
+    } else {
+        // Fallback for browsers without IntersectionObserver support.
+        let ticking = false;
+
+        function handleScroll() {
+            if (ticking) {
+                return;
+            }
+            ticking = true;
+            window.requestAnimationFrame(() => {
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 100) {
+                        section.classList.add("visible");
+                    }
+                });
+                ticking = false;
+            });
+        }
+
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        handleScroll();
+    }
+} else {
+    // If user prefers reduced motion, make all sections visible immediately
+    sections.forEach(section => section.classList.add("visible"));
 }
