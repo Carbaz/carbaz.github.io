@@ -11,7 +11,7 @@
   },
   "about": {
     "title": "About Me",
-    "body": "I am an AI Engineer specialized in LLM engineering, agentic systems, FastAPI backends, and practical AI applications. This website hosts my interactive career chatbot, which knows my CV and can answer questions about my experience, skills, and projects."
+    "body": "Hello, I'm Carlos Bazaga, a seasoned Software Engineer with over 13 years of experience specializing in modernizing software architectures and implementing innovative solutions. I am currently expanding my expertise in the captivating field of Generative AI and LLM engineering.\n\nMy journey has equipped me with a robust skill set, particularly in transitioning legacy systems to modern platforms using technologies such as Python and AWS. I have a proven track record in designing and deploying CI/CD pipelines and leveraging microservice-oriented programming.\n\nThroughout my career, I've had the privilege to work with diverse teams and projects, from developing IoT solutions and fraud prevention systems to creating backend infrastructures for mobile and web applications. I am passionate about overcoming technological challenges and continuously seeking to drive innovation and automation.\n\nIn addition to my professional work, I enjoy contributing to open-source projects and developing personal projects that push the boundaries of technology. If you would like to know more about my work or collaborate, feel free to reach out!"
   },
   "certs": {
     "title": "Certificates & Diplomas",
