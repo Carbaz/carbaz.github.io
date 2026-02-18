@@ -2,44 +2,83 @@
    ROOT VARIABLES (LIGHT MODE)
 ============================ */
 :root {
-    --bg: #f7f7f7;
-    --text: #222;
-    --header-bg: #111;
+    --bg-gradient-start: #f3f4f6; /* Neutral light gray */
+    --bg-gradient-end: #e5e7eb; /* Slightly darker gray */
+    --text-color: #1f2937; /* Neutral dark gray */
+    --accent-color: #3b82f6; /* Softer blue */
+    --card-bg-light: #e0e7ff; /* Light mode: Slightly darker blue-gray for the cards */
+    --card-border: #d1d5db; /* Light gray border */
+    --card-shadow: rgba(0, 0, 0, 0.05);
+    --section-bg: #f3f4f6; /* Light gray for the section */
+
+    --header-bg-light: linear-gradient(135deg, #6a11cb, #2575fc); /* Restore original vibrant gradient */
+    --footer-bg-light: #3b82f6; /* Vibrant blue for light mode */
+
     --header-text: #fff;
     --section-alt-bg: #eee;
 
     --link: #0066cc;
     --link-hover: #004999;
 
-    --card-bg: #fff;
-    --card-border: #ddd;
+    --chatbot-bg-light: #f9fafb; /* Restore light gray for chatbot in light mode */
+
+    /* Typography variables for dynamic calculations */
+    --cert-title-font-size: 1.4rem;
+    --cert-title-line-height: 1.2;
+    --cert-title-lines: 2; /* Number of lines to reserve */
+
+    /* Compatibility aliases for code using old variable names */
+    --card-bg: var(--card-bg-light);
+    --text: var(--text-color);
+    --header-bg: var(--header-bg-light);
+    --accent-color-hover: #2563eb; /* Darker blue for hover */
+
+    /* Fallbacks for older browsers */
+    --bg-gradient-start-fallback: #f3f4f6;
+    --bg-gradient-end-fallback: #e5e7eb;
+    --header-bg-light-fallback: #6a11cb;
 }
 
 /* ============================
    DARK MODE
 ============================ */
 [data-theme="dark"] {
-    --bg: #111;
-    --text: #eee;
-    --header-bg: #000;
-    --header-text: #fff;
-    --section-alt-bg: #222;
+    --bg-gradient-start: #1e293b; /* Dark blue-gray */
+    --bg-gradient-end: #111827; /* Very dark gray */
+    --text-color: #e5e7eb; /* Light gray */
+    --accent-color: #60a5fa; /* Softer blue */
+    --card-bg-dark: #2c3e50; /* Dark mode: Darker gray-blue for the cards */
+    --card-border: #374151; /* Darker gray border */
+    --card-shadow: rgba(0, 0, 0, 0.2);
+    --section-bg: #1e293b; /* Dark blue-gray for the section */
 
-    --link: #66aaff;
-    --link-hover: #99c2ff;
+    --header-bg-dark: #000; /* Restore original dark mode header */
+    --footer-bg-dark: #1e293b; /* Darker blue-gray for footer in dark mode */
 
-    --card-bg: #1a1a1a;
-    --card-border: #333;
+    --chatbot-bg-dark: #0f1729; /* Proper dark gray for chatbot in dark mode */
+
+    /* Compatibility aliases for code using old variable names */
+    --card-bg: var(--card-bg-dark);
+    --text: var(--text-color);
+    --header-bg: var(--header-bg-dark);
+    --accent-color-hover: #3b82f6; /* Brighter blue for hover in dark mode */
+
+    /* Fallbacks for older browsers */
+    --bg-gradient-start-fallback: #1e293b;
+    --bg-gradient-end-fallback: #111827;
+    --header-bg-dark-fallback: #000;
 }
 
 /* ============================
-   GLOBAL STYLES
+   GENERAL STYLES
 ============================ */
 body {
+    font-family: 'Poppins', sans-serif;
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
+    padding: 20px;
+    background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+    color: var(--text-color);
+    line-height: 1.6;
     transition: background 0.3s ease, color 0.3s ease;
 }
 
@@ -67,11 +106,35 @@ h1, h2, h3 {
    HEADER
 ============================ */
 header {
-    background: var(--header-bg);
-    color: var(--header-text);
-    padding: 40px 0;
     text-align: center;
-    transition: background 0.3s ease, color 0.3s ease;
+    padding: 2rem 1rem;
+    color: var(--text-color);
+    background: var(--header-bg-light);
+    box-shadow: 0 4px 6px var(--card-shadow);
+    border-bottom: 4px solid var(--bg-gradient-end);
+}
+
+[data-theme="dark"] header {
+    background: var(--header-bg-dark);
+}
+
+header .top-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin: 0.5rem 0;
+    color: var(--header-text);
+}
+
+header p {
+    font-size: 1.2rem;
+    margin: 0;
+    color: #e0f2fe;
 }
 
 header nav a {
@@ -138,7 +201,12 @@ header nav a:hover {
    SECTIONS
 ============================ */
 .section {
-    padding: 60px 20px;
+    padding: 3rem 1rem;
+    margin: 2rem 0;
+    background: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px var(--card-shadow);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .section.alt {
@@ -165,28 +233,52 @@ header nav a:hover {
 
 .cert-category-grid {
     display: grid;
-    /* grid-template-columns: repeat(2, 1fr); */
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
 }
 
+/* ============================
+   CERTIFICATE ITEM LAYOUT
+============================ */
 .cert-item {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    grid-template-rows: auto auto;
-    gap: 15px 25px;
-    background: var(--card-bg);
+    gap: 20px;
+    background: var(--card-bg-light);
     border: 1px solid var(--card-border);
+    border-radius: 15px;
     padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cert-item img {
+    width: 100%;
+    height: auto;
     border-radius: 10px;
+}
+
+.cert-item .cert-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cert-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .cert-title {
     grid-row: 1;
     grid-column: 1 / 3;
-    font-size: 1.4rem;
+    font-size: var(--cert-title-font-size);
     font-weight: bold;
     margin-bottom: 10px;
+    line-height: var(--cert-title-line-height);
+    min-height: calc(var(--cert-title-font-size) * var(--cert-title-lines)); /* Reserve space for multiple lines */
+    display: flex;
+    align-items: center;
 }
 
 .cert-image {
@@ -205,10 +297,27 @@ header nav a:hover {
 
 .cert-verify {
     grid-row: 3;
-    grid-column: 1;
-    margin-top: 8px;
+    grid-column: 1 / -1; /* Span across all columns */
+    margin-top: 10px;
+    text-align: center;
     font-size: 0.9rem;
     opacity: 0.85;
+}
+
+/* ============================
+   DARK MODE CARD TEXT FIX
+============================ */
+[data-theme="dark"] .cert-item {
+    background: var(--card-bg-dark);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .cert-item a {
+    color: var(--accent-color);
+}
+
+[data-theme="dark"] .cert-item a:hover {
+    color: var(--accent-color-hover);
 }
 
 /* ============================
@@ -226,21 +335,42 @@ header nav a:hover {
 }
 
 .about-links ul {
-    max-width: 25%;
+    max-width: 100%;
     list-style: none;
     padding: 0;
-    margin: 20px 0 0 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px 20px;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 .about-links li {
     margin: 0;
 }
 
-.about-links a:hover {
-    opacity: 1;
+.about-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* ============================
+   BUTTONS
+============================ */
+button {
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--accent-color-hover);
+    transform: scale(1.05);
 }
 
 /* ============================
@@ -248,8 +378,227 @@ header nav a:hover {
 ============================ */
 footer {
     text-align: center;
-    padding: 20px;
-    background: var(--header-bg);
-    color: var(--header-text);
-    transition: background 0.3s ease, color 0.3s ease;
+    padding: 1.5rem;
+    background: var(--footer-bg-light);
+    color: #fff;
+    border-top: 4px solid var(--bg-gradient-start);
+}
+
+[data-theme="dark"] footer {
+    background: var(--footer-bg-dark);
+}
+
+/* ============================
+   CHATBOT BACKGROUND
+============================ */
+.chatbot,
+#chatbot {
+    background: var(--chatbot-bg-light);
+    transition: background 0.3s ease;
+}
+
+[data-theme="dark"] .chatbot,
+[data-theme="dark"] #chatbot {
+    background: var(--chatbot-bg-dark);
+}
+
+/* ============================
+   TYPOGRAPHY HIERARCHY
+   (see earlier h1–h3 definitions)
+============================ */
+p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+small {
+    font-size: 0.875rem;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+/* ============================
+   RESPONSIVE DESIGN
+============================ */
+@media (min-width: 768px) {
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+/* ============================
+   RESPONSIVE DESIGN ENHANCEMENTS
+============================ */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .cert-category-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .social-links {
+        flex-wrap: wrap; /* Allow wrapping for smaller screens */
+        gap: 10px; /* Reduce gap between items */
+    }
+
+    .social-links a {
+        padding: 2px 6px; /* Adjust padding for smaller buttons */
+    }
+
+    .cert-category-grid {
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 10px;
+    }
+
+    section {
+        padding: 2rem 1rem; /* Reduce padding for sections */
+    }
+}
+
+/* ============================
+   SCROLL ANIMATIONS
+============================ */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Disable animations if user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    section {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* Fallback: make sections visible if JS doesn't load */
+.no-js section {
+    opacity: 1;
+    transform: none;
+}
+
+/* ============================
+   SOCIAL LINKS
+============================ */
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    max-width: 100%; /* Ensure the container doesn't exceed the viewport */
+    overflow: visible;
+}
+
+.social-links.single-row {
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+
+.social-links li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow: visible; /* Ensure content is not clipped */
+}
+
+.social-links a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.2s, color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: visible; /* Ensure content is not clipped */
+    border-radius: 12px; /* Add rounded corners */
+    padding: 4px 8px; /* Add padding for better hover effect */
+}
+
+.social-links a:hover {
+    transform: scale(1.1);
+    color: var(--accent-color);
+    background-color: var(--card-bg-light); /* Lighter background for light mode */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .social-links a:hover {
+    background-color: #374151; /* Darker background for dark mode */
+}
+
+.social-links img {
+    width: 24px;
+    height: 24px;
+}
+
+.social-icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-color: currentColor;
+    margin-right: 0.4rem;
+}
+
+.social-icon-github {
+    -webkit-mask: url('/assets/img/github-icon.svg') no-repeat center / contain;
+    mask: url('/assets/img/github-icon.svg') no-repeat center / contain;
+}
+
+.social-icon-linkedin {
+    -webkit-mask: url('/assets/img/linkedin-icon.svg') no-repeat center / contain;
+    mask: url('/assets/img/linkedin-icon.svg') no-repeat center / contain;
+}
+
+.social-icon-email {
+    -webkit-mask: url('/assets/img/email-icon.svg') no-repeat center / contain;
+    mask: url('/assets/img/email-icon.svg') no-repeat center / contain;
+}
+
+.social-icon-huggingface {
+    -webkit-mask: url('/assets/img/huggingface-icon.svg') no-repeat center / contain;
+    mask: url('/assets/img/huggingface-icon.svg') no-repeat center / contain;
+}
+
+.social-label-nowrap {
+    white-space: nowrap;
 }
