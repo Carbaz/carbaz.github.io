@@ -523,8 +523,12 @@ section.visible {
 .social-links a:hover {
     transform: scale(1.1);
     color: var(--accent-color);
-    background-color: #374151;
+    background-color: var(--card-bg-light); /* Lighter background for light mode */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .social-links a:hover {
+    background-color: #374151; /* Darker background for dark mode */
 }
 
 .social-links img {
