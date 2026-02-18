@@ -464,6 +464,39 @@ small {
     }
 }
 
+/* Responsive design for smaller screens */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .social-links {
+        flex-wrap: wrap; /* Allow wrapping for smaller screens */
+        gap: 10px; /* Reduce gap between items */
+    }
+
+    .social-links a {
+        padding: 2px 6px; /* Adjust padding for smaller buttons */
+    }
+
+    .cert-category-grid {
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 10px;
+    }
+
+    section {
+        padding: 2rem 1rem; /* Reduce padding for sections */
+    }
+}
+
 /* ============================
    SCROLL ANIMATIONS
 ============================ */
