@@ -212,13 +212,31 @@ section h2 {
     gap: 20px;
 }
 
+/* ============================
+   CERTIFICATE ITEM LAYOUT
+============================ */
 .cert-item {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
     background: var(--card-bg-light);
     border: 1px solid var(--card-border);
     border-radius: 15px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cert-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.cert-item .cert-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .cert-item:hover {
@@ -250,10 +268,27 @@ section h2 {
 
 .cert-verify {
     grid-row: 3;
-    grid-column: 1;
-    margin-top: 8px;
+    grid-column: 1 / -1; /* Span across all columns */
+    margin-top: 10px;
+    text-align: center;
     font-size: 0.9rem;
     opacity: 0.85;
+}
+
+/* ============================
+   DARK MODE CARD TEXT FIX
+============================ */
+[data-theme="dark"] .cert-item {
+    background: var(--card-bg-dark);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .cert-item a {
+    color: var(--accent-color);
+}
+
+[data-theme="dark"] .cert-item a:hover {
+    color: var(--accent-color-hover);
 }
 
 /* ============================
