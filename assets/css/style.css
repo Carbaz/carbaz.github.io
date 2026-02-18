@@ -389,24 +389,15 @@ footer {
 }
 
 /* ============================
-   CHATBOT BACKGROUND FIX
+   CHATBOT BACKGROUND
 ============================ */
-.chatbot {
+.chatbot,
+#chatbot {
     background: var(--chatbot-bg-light);
     transition: background 0.3s ease;
 }
 
-[data-theme="dark"] .chatbot {
-    background: var(--chatbot-bg-dark);
-}
-
-/* ============================
-   CHATBOT BACKGROUND OVERRIDE
-============================ */
-#chatbot {
-    background: var(--chatbot-bg-light);
-}
-
+[data-theme="dark"] .chatbot,
 [data-theme="dark"] #chatbot {
     background: var(--chatbot-bg-dark);
 }
