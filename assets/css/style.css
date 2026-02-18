@@ -276,7 +276,7 @@ header nav a:hover {
     font-weight: bold;
     margin-bottom: 10px;
     line-height: var(--cert-title-line-height);
-    min-height: calc(var(--cert-title-font-size) * var(--cert-title-line-height) * var(--cert-title-lines)); /* Dynamic calculation based on variables */
+    min-height: calc(var(--cert-title-font-size) * var(--cert-title-lines)); /* Reserve space for multiple lines */
     display: flex;
     align-items: center;
 }
