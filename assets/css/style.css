@@ -508,6 +508,7 @@ section.visible {
     display: flex;
     align-items: center;
     gap: 10px;
+    overflow: visible; /* Ensure content is not clipped */
 }
 
 .social-links a {
@@ -518,6 +519,7 @@ section.visible {
     gap: 10px;
     transition: transform 0.2s, color 0.3s ease, box-shadow 0.3s ease;
     white-space: nowrap; /* Prevent text wrapping */
+    overflow: visible; /* Ensure content is not clipped */
 }
 
 .social-links a:hover {
