@@ -21,6 +21,11 @@
     --link-hover: #004999;
 
     --chatbot-bg-light: #f9fafb; /* Restore light gray for chatbot in light mode */
+
+    /* Fallbacks for older browsers */
+    --bg-gradient-start-fallback: #f3f4f6;
+    --bg-gradient-end-fallback: #e5e7eb;
+    --header-bg-light-fallback: #6a11cb;
 }
 
 /* ============================
@@ -40,6 +45,11 @@
     --footer-bg-dark: #1e293b; /* Darker blue-gray for footer in dark mode */
 
     --chatbot-bg-dark: #0f1729; /* Proper dark gray for chatbot in dark mode */
+
+    /* Fallbacks for older browsers */
+    --bg-gradient-start-fallback: #1e293b;
+    --bg-gradient-end-fallback: #111827;
+    --header-bg-dark-fallback: #000;
 }
 
 /* ============================
