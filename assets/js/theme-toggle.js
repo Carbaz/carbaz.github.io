@@ -27,18 +27,26 @@ toggleBtn.addEventListener("click", () => {
 });
 
 /* ---------------------------
-   SCROLL ANIMATIONS
+   SCROLL ANIMATIONS (Optimized)
 ----------------------------*/
 const sections = document.querySelectorAll("section");
 
-function handleScroll() {
-    sections.forEach(section => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-            section.classList.add("visible");
-        }
-    });
+let scrollTimeout;
+
+function handleScrollOptimized() {
+    if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+    }
+
+    scrollTimeout = setTimeout(() => {
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 100) {
+                section.classList.add("visible");
+            }
+        });
+    }, 100); // Debounce scroll events to improve performance
 }
 
-window.addEventListener("scroll", handleScroll);
-handleScroll();
+window.addEventListener("scroll", handleScrollOptimized);
+handleScrollOptimized();
