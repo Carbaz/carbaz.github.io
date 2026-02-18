@@ -261,7 +261,7 @@ section h2 {
     font-weight: bold;
     margin-bottom: 10px;
     line-height: 1.2;
-    min-height: 2.4rem; /* Ensure two lines of space */
+    min-height: 2.8rem; /* Ensure two lines of space */
     display: flex;
     align-items: center;
 }
