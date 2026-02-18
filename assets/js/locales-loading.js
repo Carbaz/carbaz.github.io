@@ -15,7 +15,7 @@ function loadLanguage(lang) {
 
                 parts.forEach(p => value = value?.[p]);
 
-                if (value) el.textContent = value;
+                if (value) el.innerHTML = value.replace(/\n/g, "<br>");
             });
         });
 
