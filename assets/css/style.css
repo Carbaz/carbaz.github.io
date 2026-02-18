@@ -496,7 +496,7 @@ section.visible {
     text-align: center;
     flex-wrap: nowrap; /* Prevent wrapping */
     max-width: 100%; /* Ensure the container doesn't exceed the viewport */
-    overflow: hidden; /* Prevent content from spilling */
+    overflow: visible;
 }
 
 .social-links.single-row {
@@ -517,14 +517,17 @@ section.visible {
     display: flex;
     align-items: center;
     gap: 10px;
-    transition: transform 0.2s, color 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.2s, color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     white-space: nowrap; /* Prevent text wrapping */
     overflow: visible; /* Ensure content is not clipped */
+    border-radius: 12px; /* Add rounded corners */
+    padding: 4px 8px; /* Add padding for better hover effect */
 }
 
 .social-links a:hover {
     transform: scale(1.1);
     color: var(--accent-color);
+    background-color: #374151;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
