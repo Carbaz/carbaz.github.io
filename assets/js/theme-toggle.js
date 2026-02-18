@@ -25,3 +25,20 @@ toggleBtn.addEventListener("click", () => {
     localStorage.setItem("theme", next);
     updateIcon(next);
 });
+
+/* ---------------------------
+   SCROLL ANIMATIONS
+----------------------------*/
+const sections = document.querySelectorAll("section");
+
+function handleScroll() {
+    sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+            section.classList.add("visible");
+        }
+    });
+}
+
+window.addEventListener("scroll", handleScroll);
+handleScroll();
