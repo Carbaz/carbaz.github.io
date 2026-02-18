@@ -1,0 +1,26 @@
+{
+  "hero": {
+    "name": "Carlos Bazaga",
+    "subtitle": "AI Engineer · LLMs · Agents · FastAPI · MLOps"
+  },
+  "nav": {
+    "about": "About",
+    "chatbot": "Career Chatbot",
+    "certs": "Certificates",
+    "links": "Links"
+  },
+  "about": {
+    "title": "About Me",
+    "body": "I am an AI Engineer specialized in LLM engineering, agentic systems, FastAPI backends, and practical AI applications. This website hosts my interactive career chatbot, which knows my CV and can answer questions about my experience, skills, and projects."
+  },
+  "certs": {
+    "title": "Certificates & Diplomas",
+    "body": "You can view or download my certifications below:"
+  },
+  "links": {
+    "title": "Links"
+  },
+  "footer": {
+    "copy": "© 2026 Carlos Bazaga"
+  }
+}

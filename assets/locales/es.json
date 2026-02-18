@@ -1,0 +1,26 @@
+{
+  "hero": {
+    "name": "Carlos Bazaga",
+    "subtitle": "Ingeniero de IA · LLMs · Agentes · FastAPI · MLOps"
+  },
+  "nav": {
+    "about": "Sobre mí",
+    "chatbot": "Chatbot profesional",
+    "certs": "Certificados",
+    "links": "Enlaces"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "body": "Soy un ingeniero de IA especializado en LLMs, sistemas de agentes, backends con FastAPI y aplicaciones de IA prácticas. Esta web incluye mi chatbot de carrera, que conoce mi CV y puede responder preguntas sobre mi experiencia, habilidades y proyectos."
+  },
+  "certs": {
+    "title": "Certificados y diplomas",
+    "body": "Puedes ver o descargar mis certificaciones a continuación:"
+  },
+  "links": {
+    "title": "Enlaces"
+  },
+  "footer": {
+    "copy": "© 2026 Carlos Bazaga"
+  }
+}

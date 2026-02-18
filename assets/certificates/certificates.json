@@ -1,0 +1,83 @@
+{
+  "Udemy": [
+    {
+      "title": "AI Engineer Core Track",
+      "file": "udemy/llm-engineering/llm-engineering.pdf",
+      "preview": "udemy/llm-engineering/llm-engineering.jpg",
+      "url": "https://www.udemy.com/certificate/UC-fc2c1790-5895-4001-abe0-5d56a5d3dd5e",
+      "description": "Become an LLM Engineer in 8 weeks: Build and deploy 8 LLM apps, mastering Generative AI, RAG, LoRA and AI Agents."
+    },
+    {
+      "title": "AI Leadership Track",
+      "file": "Udemy/LLM-Engineering/llm-engineering.pdf",
+      "preview": "Udemy/LLM-Engineering/llm-engineering.jpg",
+      "url": "https://www.udemy.com/certificate/UC-1243db99-fac2-405c-b15e-e63a5e94a6dd",
+      "description": "From AI Strategist to AI Leader: An Actionable Workshop for Leaders & Founders to Deliver Measurable ROI with LLMs."
+    }
+  ],
+  "LinkedIn Learning": [
+    {
+      "title": "AI Cheat Sheet for Business Leaders",
+      "file": "linkedin-learning/ai-cheat-sheet-for-business-leaders/ai-cheat-sheet-for-business-leaders.pdf",
+      "preview": "linkedin-learning/ai-cheat-sheet-for-business-leaders/ai-cheat-sheet-for-business-leaders.jpg",
+      "url": "https://www.linkedin.com/learning/certificates/52c8adbde191864d79108188b4650ce07f9b811a0c4dd2deb7aff6640fbb496e?trk=share_certificate",
+      "description": "A quick reference guide to AI for business leaders."
+    },
+    {
+      "title": "Everyday AI Business Tools",
+      "file": "linkedin-learning/everyday-ai-business-tools/everyday-ai-business-tools-pmi.pdf",
+      "preview": "linkedin-learning/everyday-ai-business-tools/everyday-ai-business-tools-pmi.jpg",
+      "url": "https://www.linkedin.com/learning/certificates/65c12485bb96280a04c4f492df908a95624eb4536da1f73b6746b79fa1690eb2?trk=share_certificate",
+      "description": "Discover AI tools for business applications."
+    },
+    {
+      "title": "Everyday AI Concepts",
+      "file": "linkedin-learning/everyday-ai-concepts/everyday-ai-concepts.pdf",
+      "preview": "linkedin-learning/everyday-ai-concepts/everyday-ai-concepts.jpg",
+      "url": "https://www.linkedin.com/learning/certificates/e40727dd2778fb76c080f3af17d4500d982115deb68e5ad91ace7bb234637e8b?trk=share_certificate",
+      "description": "Explore foundational concepts of AI for everyday use."
+    },
+    {
+      "title": "Generative AI vs. Traditional AI",
+      "file": "linkedin-learning/generative-ai-vs-traditional-ai/generative-ai-vs-traditional-ai-nasba.pdf",
+      "preview": "linkedin-learning/generative-ai-vs-traditional-ai/generative-ai-vs-traditional-ai-nasba.jpg",
+      "url": "https://www.linkedin.com/learning/certificates/52ff65a88ab1105080d16033afe00443f1d4ab8f0a6e9b759d0ede339470355d?trk=share_certificate",
+      "description": "Understand the differences between generative and traditional AI."
+    },
+    {
+      "title": "Hands-On AI: Introduction to Retrieval-Augmented Generation (RAG)",
+      "file": "linkedin-learning/hands-on-ai-introduction-to-retrieval-augmented-generation-rag/hands-on-ai-introduction-to-retrieval-augmented-generation-rag.pdf",
+      "preview": "linkedin-learning/hands-on-ai-introduction-to-retrieval-augmented-generation-rag/hands-on-ai-introduction-to-retrieval-augmented-generation-rag.jpg",
+      "url": "https://www.linkedin.com/learning/certificates/52ff65a88ab1105080d16033afe00443f1d4ab8f0a6e9b759d0ede339470355d?trk=share_certificate",
+      "description": "Learn about Retrieval-Augmented Generation (RAG) in AI."
+    },
+    {
+      "title": "Programming Foundations: OpenSource Licensing",
+      "file": "linkedin-learning/programming-foundations-open-source-licensing/programming-foundations-open-source-licensing.pdf",
+      "preview": "linkedin-learning/programming-foundations-open-source-licensing/programming-foundations-open-source-licensing.jpg",
+      "url": "https://www.linkedin.com/learning/certificates/c8948a520b208a65a2bc63a47c30e9791d4d731ece590b7c5283baabddce7977?trk=share_certificate",
+      "description": "Understand the basics of open-source licensing."
+    },
+    {
+      "title": "Python: Advanced Design Patterns",
+      "file": "linkedin-learning/python-advanced-design-patterns/python-advanced-design-patterns.pdf",
+      "preview": "linkedin-learning/python-advanced-design-patterns/python-advanced-design-patterns.jpg",
+      "url": "https://www.linkedin.com/learning/certificates/21b00028be81fca021d559557ce38d1e2713d1e92aa07e2f95c9100685d4604e?trk=share_certificate",
+      "description": "Master advanced design patterns in Python programming."
+    },
+    {
+      "title": "Stay Lean with Kanban",
+      "file": "linkedin-learning/stay-lean-with-kanban/stay-lean-with-kanban-pmi.pdf",
+      "preview": "linkedin-learning/stay-lean-with-kanban/stay-lean-with-kanban-pmi.jpg",
+      "url": "https://www.linkedin.com/learning/certificates/d5488d3f18ea230b93919b89e5f757bbfe2b2f9cd419a372ce343f0a5a9ee8c3?trk=share_certificate",
+      "description": "Learn how to use Kanban to stay lean and efficient."
+    },
+    {
+      "title": "Inglés de Negocios: Learning Path",
+      "file": "linkedin-learning/ingles-de-negocios-learning-path/ingles-de-negocios-learning-path.pdf",
+      "preview": "linkedin-learning/ingles-de-negocios-learning-path/ingles-de-negocios-learning-path.jpg",
+      "url": "https://www.linkedin.com/learning/certificates/3d8d42cf4d12d3fde352ad7df91e4095059c871ffaba6264dc80f8d85b9923a7?trk=share_certificate",
+      "description": "Learn business English communication skills."
+    }
+  ]
+}
