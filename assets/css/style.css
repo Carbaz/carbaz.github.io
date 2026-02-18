@@ -413,32 +413,9 @@ footer {
 }
 
 /* ============================
-   TYPOGRAPHY HIERARCHY (Improved)
+   TYPOGRAPHY HIERARCHY
+   (see earlier h1–h3 definitions)
 ============================ */
-h1 {
-    font-size: 3.5rem;
-    font-weight: 800;
-    color: var(--accent-color);
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
-}
-
-h2 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    color: var(--accent-color);
-    margin-bottom: 1rem;
-    line-height: 1.3;
-}
-
-h3 {
-    font-size: 2.2rem;
-    font-weight: 600;
-    color: var(--text-color);
-    margin-bottom: 0.75rem;
-    line-height: 1.4;
-}
-
 p {
     font-size: 1.125rem;
     line-height: 1.8;
