@@ -306,13 +306,13 @@ section h2 {
 }
 
 .about-links ul {
-    max-width: 25%;
+    max-width: 100%;
     list-style: none;
     padding: 0;
-    margin: 20px 0 0 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px 20px;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 .about-links li {
@@ -321,6 +321,13 @@ section h2 {
 
 .about-links a:hover {
     opacity: 1;
+}
+
+.about-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 /* ============================
@@ -453,4 +460,50 @@ section {
 section.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* ============================
+   SOCIAL LINKS
+============================ */
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    max-width: 100%; /* Ensure the container doesn't exceed the viewport */
+    overflow: hidden; /* Prevent content from spilling */
+}
+
+.social-links.single-row {
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+
+.social-links li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.2s;
+}
+
+.social-links a:hover {
+    transform: scale(1.1);
+}
+
+.social-links img {
+    width: 24px;
+    height: 24px;
 }
