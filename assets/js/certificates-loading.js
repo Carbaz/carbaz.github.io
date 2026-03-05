@@ -51,12 +51,14 @@ fetch("assets/certificates/certificates.json")
                 wrapper.appendChild(imgLink);
 
                 // Verificación debajo de la imagen
-                const verify = document.createElement("a");
-                verify.href = cert.url;
-                verify.target = "_blank";
-                verify.textContent = "Verificar certificado";
-                verify.className = "cert-verify";
-                wrapper.appendChild(verify);
+                if (cert.url) {
+                    const verify = document.createElement("a");
+                    verify.href = cert.url;
+                    verify.target = "_blank";
+                    verify.textContent = "Verificar certificado";
+                    verify.className = "cert-verify";
+                    wrapper.appendChild(verify);
+                }
 
                 // Descripción derecha
                 const desc = document.createElement("p");
