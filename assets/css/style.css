@@ -525,13 +525,12 @@ section.visible {
     padding: 0;
     margin: 0 auto;
     text-align: center;
-    flex-wrap: nowrap; /* Prevent wrapping */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
     max-width: 100%; /* Ensure the container doesn't exceed the viewport */
     overflow: visible;
 }
 
 .social-links.single-row {
-    flex-wrap: nowrap;
     justify-content: space-evenly;
 }
 
