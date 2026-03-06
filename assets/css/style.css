@@ -261,7 +261,7 @@ header nav a:hover {
 .cert-item .cert-description {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .cert-item:hover {
@@ -274,11 +274,9 @@ header nav a:hover {
     grid-column: 1 / 3;
     font-size: var(--cert-title-font-size);
     font-weight: bold;
-    margin-bottom: 10px;
     line-height: var(--cert-title-line-height);
     min-height: calc(var(--cert-title-font-size) * var(--cert-title-lines)); /* Reserve space for multiple lines */
-    display: flex;
-    align-items: center;
+    /* Allow multiline titles by removing flex alignment */
 }
 
 .cert-image {
