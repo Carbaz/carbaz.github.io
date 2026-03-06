@@ -79,5 +79,50 @@
       "url": "https://www.linkedin.com/learning/certificates/3d8d42cf4d12d3fde352ad7df91e4095059c871ffaba6264dc80f8d85b9923a7?trk=share_certificate",
       "description": "Learn business English communication skills."
     }
+  ],
+  "MongoDB University": [
+    {
+      "title": "M101P: MongoDB for Developers",
+      "file": "mongodb/M101P MongoDB for Developers.pdf",
+      "preview": "mongodb/M101P MongoDB for Developers.jpg",
+      "url": "https://learn.mongodb.com/c/J4HBwVgMWG2QpRAUDim-Ng",
+      "description": "A practical course on MongoDB's document model, covering schema design, CRUD operations, queries, indexing, and aggregation to build efficient data-driven applications."
+    },
+    {
+      "title": "M102: MongoDB for DBAs",
+      "file": "mongodb/M102 MongoDB for DBAs.pdf",
+      "preview": "mongodb/M102 MongoDB for DBAs.jpg",
+      "url": "https://learn.mongodb.com/c/1dMDcdR4WcG9eiv-y2-gxg",
+      "description": "A focused on MongoDB operations, including deployment, configuration, replication, sharding, monitoring, backups, and performance tuning for stable and scalable systems."
+    }
+  ],
+  "Universidad Rey Juan Carlos (URJC)": [
+    {
+      "title": "Higher Degree Course in Drone Programming",
+      "file": "university/urjc/titulo-drones-I-A.jpg",
+      "preview": "university/urjc/titulo-drones-I-A.jpg",
+      "description": "Introduction to quadcopters programming and application development for aerial robots. Sensory processing of images from the camera on board the drone using OpenCV. Reactive control techniques and decision making using PID controllers and fuzzy control."
+    },
+    {
+      "title": "Higher Degree Course in Advanced Drone Programming",
+      "file": "university/urjc/titulo-drones-II-A.jpg",
+      "preview": "university/urjc/titulo-drones-II-A.jpg",
+      "description": "Deeper image processing techniques and more complete control techniques for quadcopters programming and application development for aerial robots. Advanced image processing: pattern detection, homographies. Automata-based control techniques and exploratory navigation algorithms."
+    }
+  ],
+  "Universidad Politécnica de Madrid (UPM)": [
+    {
+      "title": "Integrated Master's Degree in Computer Engineering (BSc + MSc, EQF 7)",
+      "file": "university/upm/diploma-IInf.pdf",
+      "preview": "university/upm/diploma-IInf.jpg",
+      "description": "Integrated five-year program covering software engineering, computer systems, artificial intelligence, systems architecture, networks, and advanced computing. Includes extensive practical training and a major final project completed after all coursework."
+    },
+    {
+      "title": "Information Security Foundation ISO/IEC 27001",
+      "file": "exin/EXIN-ISO-27000-Certificate.pdf",
+      "preview": "exin/EXIN-ISO-27000-Certificate.png",
+      "url": "https://mylogin.exin.nl/polarserver.asp?FrameSet=Minimal&ToolName=CertificateCheckTool&Framed=1&LastName=Bazaga%20Ortiz%20de%20la%20Tabla&CertificateNumber=5952770.20642234&ModuleID=45",
+      "description": "Certification in Information Security Foundation based on ISO/IEC 27001 by EXIN."
+    }
   ]
 }
