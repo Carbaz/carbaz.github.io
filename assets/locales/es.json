@@ -5,13 +5,23 @@
   },
   "nav": {
     "about": "Sobre mí",
-    "chatbot": "Chatbot profesional",
+    "projects": "Proyectos",
     "certs": "Certificados",
     "links": "Enlaces"
   },
   "about": {
     "title": "Sobre mí",
     "body": "Hola, soy Carlos Bazaga, un ingeniero de software con más de 13 años de experiencia especializado en la modernización de arquitecturas de software e implementación de soluciones innovadoras. Actualmente estoy ampliando mi experiencia en el fascinante campo de la IA Generativa y la ingeniería de LLM.\n\nMi trayectoria me ha dotado de un conjunto sólido de habilidades, particularmente en la transición de sistemas heredados a plataformas modernas utilizando tecnologías como Python y AWS. Tengo un historial comprobado en el diseño e implementación de pipelines CI/CD y en el aprovechamiento de la programación orientada a microservicios.\n\nA lo largo de mi carrera, he tenido el privilegio de trabajar con equipos y proyectos diversos, desde el desarrollo de soluciones IoT y sistemas de prevención de fraudes hasta la creación de infraestructuras backend para aplicaciones móviles y web. Me apasiona superar desafíos tecnológicos y buscar continuamente impulsar la innovación y la automatización.\n\nAdemás de mi trabajo profesional, disfruto contribuyendo a proyectos de código abierto y desarrollando proyectos personales que amplían los límites de la tecnología. Si deseas saber más sobre mi trabajo o colaborar, ¡no dudes en ponerte en contacto!"
+  },
+  "projects": {
+    "title": "Galería de Proyectos",
+    "description": "Explora mis proyectos interactivos de IA y demostraciones.",
+    "tabs": {
+      "career": "Conversación de Carrera",
+      "neural": "The Neural Nexus"
+    },
+    "careerDesc": "Un chatbot interactivo que muestra mi experiencia en desarrollo profesional y conversaciones impulsadas por IA.",
+    "neuralDesc": "Un juego inmersivo de exploración de mazmorras de IA impulsado por modelos de lenguaje avanzados e IA generativa."
   },
   "certs": {
     "title": "Certificados y diplomas",
