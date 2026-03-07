@@ -6,6 +6,29 @@ function initializeProjectTabs(projectsData) {
     const tabButtons = document.querySelectorAll('.project-tab-btn');
     const tabPanes = document.querySelectorAll('.project-tab-pane');
     const tabContent = document.querySelector('.project-tab-content');
+    const loadedTabs = new Set();
+
+    function loadTabContent(tabName) {
+        if (!loadedTabs.has(tabName)) {
+            const iframe = document.querySelector(`#${tabName} iframe`);
+            if (iframe && iframe.dataset.src) {
+                const spinner = iframe.parentElement.querySelector('.spinner');
+                if (spinner) {
+                    spinner.style.display = 'flex';  // Show spinner before loading
+                }
+                iframe.src = iframe.dataset.src;
+                loadedTabs.add(tabName);
+            }
+        }
+    }
+
+    function unloadTabContent(tabName) {
+        const iframe = document.querySelector(`#${tabName} iframe`);
+        if (iframe) {
+            iframe.src = '';
+            loadedTabs.delete(tabName);  // Remove from loaded set so it reloads next time
+        }
+    }
 
     function updateIframeHeights() {
         const container = document.querySelector('.container');
@@ -36,21 +59,31 @@ function initializeProjectTabs(projectsData) {
         button.addEventListener('click', function() {
             const tabName = this.getAttribute('data-tab');
 
-            // Remove active class from all buttons and panes
-            tabButtons.forEach(btn => btn.classList.remove('active'));
+            // Unload all other tabs and remove active class
+            tabButtons.forEach(btn => {
+                if (btn !== this) {
+                    const otherTabName = btn.getAttribute('data-tab');
+                    unloadTabContent(otherTabName);
+                }
+                btn.classList.remove('active');
+            });
             tabPanes.forEach(pane => pane.classList.remove('active'));
 
-            // Add active class to clicked button and corresponding pane
+            // Load and activate current tab
             this.classList.add('active');
             const activePane = document.getElementById(tabName);
             if (activePane) {
                 activePane.classList.add('active');
+                loadTabContent(tabName);
                 setTimeout(updateContentHeight, 50);
                 setTimeout(updateContentHeight, 200);
                 setTimeout(updateContentHeight, 500);
             }
         });
     });
+
+    // Load first tab on page load
+    loadTabContent(loadedTabs.size === 0 ? projectsData[0].id : Array.from(loadedTabs)[0]);
 
     // Initial height on page load
     updateIframeHeights();
@@ -90,11 +123,27 @@ document.addEventListener('DOMContentLoaded', function() {
                 const iframeWrapper = document.createElement('div');
                 iframeWrapper.className = 'iframe-wrapper';
 
+                // Create spinner
+                const spinner = document.createElement('div');
+                spinner.className = 'spinner';
+                spinner.innerHTML = `
+                    <div class="spinner-circle"></div>
+                    <div class="spinner-text">Loading...</div>
+                `;
+                spinner.style.display = 'none';  // Hidden by default
+                iframeWrapper.appendChild(spinner);
+
                 const iframe = document.createElement('iframe');
-                iframe.src = project.url;
+                iframe.dataset.src = project.url;  // Store URL but don't load yet
                 iframe.style.width = '100%';
                 iframe.style.height = project.height + 'px';
                 iframe.style.border = 'none';
+                iframe.dataset.spinner = spinner;  // Reference to spinner
+
+                // Show spinner when iframe loads, hide after content loads
+                iframe.addEventListener('load', function() {
+                    spinner.style.display = 'none';
+                });
 
                 iframeWrapper.appendChild(iframe);
                 pane.appendChild(iframeWrapper);
