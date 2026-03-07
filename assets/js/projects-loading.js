@@ -2,10 +2,27 @@
    PROJECTS LOADING
 ----------------------------*/
 
-function initializeProjectTabs() {
+function initializeProjectTabs(projectsData) {
     const tabButtons = document.querySelectorAll('.project-tab-btn');
     const tabPanes = document.querySelectorAll('.project-tab-pane');
     const tabContent = document.querySelector('.project-tab-content');
+
+    function updateIframeHeights() {
+        const container = document.querySelector('.container');
+        const currentWidth = container ? container.offsetWidth : window.innerWidth - 40;
+
+        // Update all iframes with responsive heights
+        projectsData.forEach(project => {
+            const iframe = document.querySelector(`#${project.id} iframe`);
+            if (iframe) {
+                const aspectRatio = project.height / project.baseWidth;
+                const newHeight = Math.round(currentWidth * aspectRatio);
+                iframe.style.height = newHeight + 'px';
+            }
+        });
+
+        updateContentHeight();
+    }
 
     function updateContentHeight() {
         const activePane = document.querySelector('.project-tab-pane.active');
@@ -36,10 +53,10 @@ function initializeProjectTabs() {
     });
 
     // Initial height on page load
-    updateContentHeight();
+    updateIframeHeights();
 
-    // Also update on window resize
-    window.addEventListener('resize', updateContentHeight);
+    // Update on window resize
+    window.addEventListener('resize', updateIframeHeights);
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -86,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             // Initialize tab functionality now that elements exist
-            initializeProjectTabs();
+            initializeProjectTabs(projects);
 
             // Apply localization to newly created elements
             const savedLang = localStorage.getItem("lang") || "en";
