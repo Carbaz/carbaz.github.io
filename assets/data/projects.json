@@ -5,14 +5,14 @@
     "descKey": "projects.careerDesc",
     "url": "https://carbaz-career-conversation.hf.space",
     "height": 650,
-    "baseWidth": 1200
+    "baseWidth": 1100
   },
   {
     "id": "neural-nexus",
     "titleKey": "projects.tabs.neural",
     "descKey": "projects.neuralDesc",
     "url": "https://carbaz-the-neural-nexus.hf.space",
-    "height": 1800,
-    "baseWidth": 1200
+    "height": 1600,
+    "baseWidth": 950
   }
 ]
