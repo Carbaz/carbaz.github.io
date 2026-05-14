@@ -5,7 +5,14 @@
       "file": "udemy/llm-engineering/llm-engineering.pdf",
       "preview": "udemy/llm-engineering/llm-engineering.jpg",
       "url": "https://www.udemy.com/certificate/UC-fc2c1790-5895-4001-abe0-5d56a5d3dd5e",
-      "description": "Become an LLM Engineer in 8 weeks: Build and deploy 8 LLM apps, mastering Generative AI, RAG, LoRA and AI Agents."
+      "description": "Become an LLM Engineer: Build and deploy 8 LLM apps, mastering Generative AI, RAG, LoRA and AI Agents."
+    },
+    {
+      "title": "AI Engineer Agentic Track",
+      "file": "udemy/agents-engineering/agents-engineering.pdf",
+      "preview": "udemy/agents-engineering/agents-engineering.jpg",
+      "url": "https://www.udemy.com/certificate/UC-73a5dcd0-ab9f-4cc9-a3e9-c37b78e0552c",
+      "description": "Master AI Agents: Build 8 real-world projects with OpenAI Agents SDK, CrewAI, LangGraph, AutoGen and MCP."
     },
     {
       "title": "AI Leadership Track",
