@@ -428,41 +428,6 @@ header nav a:hover {
 }
 
 /* ============================
-   LINKS SECTION
-============================ */
-.about-links a {
-    color: var(--link);
-    text-decoration: none;
-    opacity: 0.9;
-}
-
-.about-links a:hover {
-    color: var(--link-hover);
-    opacity: 1;
-}
-
-.about-links ul {
-    max-width: 100%;
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.about-links li {
-    margin: 0;
-}
-
-.about-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-/* ============================
    BUTTONS
 ============================ */
 button {
@@ -572,15 +537,6 @@ small {
         font-size: 1rem;
     }
 
-    .social-links {
-        flex-wrap: wrap; /* Allow wrapping for smaller screens */
-        gap: 10px; /* Reduce gap between items */
-    }
-
-    .social-links a {
-        padding: 2px 6px; /* Adjust padding for smaller buttons */
-    }
-
     .cert-category-grid {
         grid-template-columns: 1fr; /* Single column layout */
         gap: 10px;
@@ -623,88 +579,25 @@ section.visible {
 /* ============================
    SOCIAL LINKS
 ============================ */
-.social-links {
+.social-shields {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    gap: 20px;
-    list-style: none;
-    padding: 0;
-    margin: 0 auto;
-    text-align: center;
-    flex-wrap: wrap; /* Allow wrapping on small screens */
-    max-width: 100%; /* Ensure the container doesn't exceed the viewport */
-    overflow: visible;
-}
-
-.social-links.single-row {
-    justify-content: space-evenly;
-}
-
-.social-links li {
-    display: flex;
-    align-items: center;
     gap: 10px;
-    overflow: visible; /* Ensure content is not clipped */
+    margin-top: 18px;
 }
 
-.social-links a {
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: transform 0.2s, color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    white-space: nowrap; /* Prevent text wrapping */
-    overflow: visible; /* Ensure content is not clipped */
-    border-radius: 12px; /* Add rounded corners */
-    padding: 4px 8px; /* Add padding for better hover effect */
-}
-
-.social-links a:hover {
-    transform: scale(1.1);
-    color: var(--accent-color);
-    background-color: var(--card-bg-light); /* Lighter background for light mode */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-[data-theme="dark"] .social-links a:hover {
-    background-color: #374151; /* Darker background for dark mode */
-}
-
-.social-links img {
-    width: 24px;
-    height: 24px;
-}
-
-.social-icon {
+.social-shields a {
     display: inline-block;
-    width: 24px;
+    transition: transform 0.2s ease;
+}
+
+.social-shields a:hover {
+    transform: translateY(-2px);
+}
+
+.social-shields img {
+    display: block;
     height: 24px;
-    background-color: currentColor;
-    margin-right: 0.4rem;
-}
-
-.social-icon-github {
-    -webkit-mask: url('/assets/img/github-icon.svg') no-repeat center / contain;
-    mask: url('/assets/img/github-icon.svg') no-repeat center / contain;
-}
-
-.social-icon-linkedin {
-    -webkit-mask: url('/assets/img/linkedin-icon.svg') no-repeat center / contain;
-    mask: url('/assets/img/linkedin-icon.svg') no-repeat center / contain;
-}
-
-.social-icon-email {
-    -webkit-mask: url('/assets/img/email-icon.svg') no-repeat center / contain;
-    mask: url('/assets/img/email-icon.svg') no-repeat center / contain;
-}
-
-.social-icon-huggingface {
-    -webkit-mask: url('/assets/img/huggingface-icon.svg') no-repeat center / contain;
-    mask: url('/assets/img/huggingface-icon.svg') no-repeat center / contain;
-}
-
-.social-label-nowrap {
-    white-space: nowrap;
+    width: auto;
 }
