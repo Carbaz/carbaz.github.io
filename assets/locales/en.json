@@ -18,10 +18,12 @@
     "description": "Explore my interactive AI projects and demos.",
     "tabs": {
       "career": "Career Conversation",
-      "neural": "The Neural Nexus"
+      "neural": "The Neural Nexus",
+      "extensions": "Python C Extensions"
     },
     "careerDesc": "An interactive chatbot showcasing my expertise in career development and AI-driven conversations.",
-    "neuralDesc": "An immersive AI dungeon exploration game powered by advanced language models and generative AI."
+    "neuralDesc": "An immersive AI dungeon exploration game powered by advanced language models and generative AI.",
+    "extensionsDesc": "A Python C Extensions generator powered by code expertised large language models."
   },
   "certs": {
     "title": "Certificates & Diplomas",

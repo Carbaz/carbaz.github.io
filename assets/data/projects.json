@@ -14,5 +14,13 @@
     "url": "https://carbaz-the-neural-nexus.hf.space",
     "height": 1600,
     "baseWidth": 950
+  },
+  {
+    "id": "python-c-extensions",
+    "titleKey": "projects.tabs.extensions",
+    "descKey": "projects.extensionsDesc",
+    "url": "https://carbaz-python-c-extensions.hf.space",
+    "height": 1100,
+    "baseWidth": 1100
   }
 ]

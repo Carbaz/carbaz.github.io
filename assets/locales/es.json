@@ -18,10 +18,12 @@
     "description": "Explora mis proyectos interactivos de IA y demostraciones.",
     "tabs": {
       "career": "Conversación de Carrera",
-      "neural": "The Neural Nexus"
+      "neural": "The Neural Nexus",
+      "extensions": "Python C Extensions"
     },
     "careerDesc": "Un chatbot interactivo que muestra mi experiencia en desarrollo profesional y conversaciones impulsadas por IA.",
-    "neuralDesc": "Un juego inmersivo de exploración de mazmorras de IA impulsado por modelos de lenguaje avanzados e IA generativa."
+    "neuralDesc": "Un juego inmersivo de exploración de mazmorras de IA impulsado por modelos de lenguaje avanzados e IA generativa.",
+    "extensionsDesc": "Un generador de extensiones en C para Python impulsado por modelos de lenguaje especializados en código."
   },
   "certs": {
     "title": "Certificados y diplomas",
